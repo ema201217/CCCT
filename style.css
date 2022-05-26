@@ -1,0 +1,67 @@
+
+header nav {
+  z-index: 2000;
+}
+
+header img.logo {
+  height: 100px;
+  object-fit: contain;
+}
+
+footer nav {
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+
+@media (max-width: 990px) {
+  footer nav {
+    padding: 0;
+  }
+}
+
+header .carousel img {
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+header .carousel a.btn-success {
+  background-color: #29a744;
+}
+
+header .carousel-text {
+  top: 25%;
+}
+
+.carousel,
+.carousel-item,
+.carousel-inner,
+.carousel img {
+  height: 100vh;
+}
+
+/* Reutilizables */
+
+.border-bottom-dashed {
+  border-bottom: 1px dashed;
+}
+.scroll-margin-top-20 {
+  scroll-margin-top: 20ex;
+}
+.scroll-margin-top-15 {
+  scroll-margin-top: 15ex;
+}
+.bg-darkblue {
+  background-color: rgb(34, 72, 99);
+}
+
+.bg-success-light {
+  background-color:rgba(29, 219, 29, 0.897) !important;
+  border-color: lightgreen !important;
+}
+.bg-success-light:hover {
+  background-color:rgba(30, 207, 30, 0.897) !important;
+}
+
+.border-none {
+  border: none !important;
+}
