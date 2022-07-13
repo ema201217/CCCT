@@ -54,7 +54,8 @@
             </div>
 
             <div class="my-2 col-12 col-lg-12 text-start text-center">
-              <input type="checkbox" id="terms" name="terms" value="yes" class="form-check-input">
+              <input type="checkbox" id="terms" name="terms" value="yes" class="form-check-input"  >
+              <input type="checkbox" id="terms" name="terms" value="no" class="form-check-input" hidden checked >
               <label for="terms" class="form-check-label">Aceptar términos y condiciones</label>
               <p class="text-danger"></p>
             </div>

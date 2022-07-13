@@ -2,7 +2,7 @@
 <?php
 
 include './partials/header.html';
-include '../functions/createUser.php'
+include '../functions/createUser.php';
 ?>
 
   <main class="my-4 d-flex flex-column align-items-center scroll-margin-top-20" id="login">

@@ -1,7 +1,6 @@
 <?php 
 
 include 'connection.php';
-
 include 'requestRegister.php';
 
 $queryCreate = "INSERT INTO users (id, lastName, firstName, email, phone, dni, username,address,password)
