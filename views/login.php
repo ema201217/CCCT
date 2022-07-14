@@ -1,11 +1,7 @@
 
-<?php
+<?php include './partials/header.html';?>
 
-include './partials/header.html';
-include '../functions/createUser.php';
-?>
-
-  <main class="my-4 d-flex flex-column align-items-center scroll-margin-top-20" id="login">
+  <main class="my-4 d-flex flex-column align-items-center" id="login">
     <section class="text-center my-5">
       <h2 class="fw-bold mb-1">FORMULARIO</h2>
       <p class="text-muted my-0 fs-4">Login</p>
@@ -24,7 +20,7 @@ include '../functions/createUser.php';
 
             <div class="row gap-1 justify-content-lg-between my-2 col-md-12 col-lg-6">
               <button type="submit" id="btnResumen" name="btn-register" class="btn btn-success btn-sm">Ingresar</button>
-              <a href="#" class="btn btn-primary btn-sm">No tengo cuenta</a>
+              <a href="register.php#register" class="btn btn-primary btn-sm">No tengo cuenta</a>
             </div>
           </div>
         </div>

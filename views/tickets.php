@@ -2,24 +2,20 @@
   include './partials/header.html';
 ?>
 
-  <main class="my-4 d-flex flex-column align-items-center scroll-margin-top-20" id="tickets">
+  <main class="my-4 d-flex flex-column align-items-center" id="tickets">
     <section>
       <div class="container d-flex flex-wrap justify-content-around gap-3 text-center">
         <div class="card" style="width: 18rem;height: 18rem">
-
           <div class="card-body d-flex flex-column justify-content-center border border-primary">
-
-            <h3 class="card-title ">Estudiante</h5>
+            <h3 class="card-title ">Estudiante</h3>
               <p class="card-text ">Tienen un descuento</p>
               <p class="card-text  fw-bold fs-5">80%</p>
               <p class="card-text ">* presentar documentación</p>
           </div>
         </div>
         <div class="card" style="width: 18rem;height: 18rem">
-
           <div class="card-body d-flex flex-column justify-content-center border border-info">
-
-            <h3 class="card-title">Trainee</h5>
+            <h3 class="card-title">Trainee</h3>
               <p class="card-text">Tienen un descuento</p>
               <p class="card-text fw-bold fs-5">50%</p>
               <p class="card-text">* presentar documentación</p>
@@ -27,8 +23,7 @@
         </div>
         <div class="card" style="width: 18rem;height: 18rem">
           <div class="card-body d-flex flex-column justify-content-center border border-warning">
-
-            <h3 class="card-title">Junior</h5>
+            <h3 class="card-title">Junior</h3>
               <p class="card-text">Tienen un descuento</p>
               <p class="card-text fw-bold fs-5">15%</p>
               <p class="card-text">* presentar documentación</p>

@@ -1,6 +1,89 @@
-<?php 
-  include './partials/header.html';
-?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" defer></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js" defer></script>
+
+  <title>Conferencia</title>
+</head>
+
+<body>
+
+  <header class="position-relative">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient position-fixed top-0 w-100" style="--bs-bg-opacity: .95;">
+      <div class="container-fluid d-flex justify-content-between">
+        <div>
+          <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/codoacodo.png" alt="logo" class="logo">
+          <a class="navbar-brand" href="#">Conf Bs As</a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav flex-wrap">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.php#">La conferencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php#oradores">Los oradores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php#lugarFecha">El lugar y la fecha</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php#formOrador">Conviértete en orador</a>
+            </li>
+            <li class="nav-item">
+              <a href="tickets.php#tickets" class="nav-link text-success fw-bold">Comprar tickets</a>
+            </li>
+            <li class="nav-item">
+              <a href="register.php#register" class="nav-link text-warning fw-bold">Register</a>
+            </li>
+            <li class="nav-item">
+              <a href="login.php#login" class="nav-link text-primary fw-bold">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/ba1.jpg" class="d-block w-100 bg-dark" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/ba2.jpg" class="d-block w-100 bg-dark" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/ba3.jpg" class="d-block w-100 bg-dark" alt="...">
+        </div>
+
+        <div class="carousel-text position-absolute end-0 text-white w-50 text-end p-5">
+          <h2 class="my-4">Conf Bs As</h2>
+          <p class="my-4 d-none d-lg-block">Bs As llega por primera vez a Argentina. Un evento para compartir
+            con nuestra
+            comunidad el conocimiento y experiencia de los expertos que están creando el futuro de internet.
+            Ven a conocer a miembros del evento, a otros estudiantes de Codo a Codo y los oradores de primer
+            nivel que tenemos para ti. Te esperamos!</p>
+          <div class="d-flex flex-wrap justify-content-end gap-2 my-4">
+            <a href="#formOrador" class="btn btn-outline-light mx-2">Quiero ser orador</a>
+            <a href="tickets.html" class="btn btn-success mx-2">Comprar tickets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <main class="my-5">
     <section id="oradores" class="scroll-margin-top-15">

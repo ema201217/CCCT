@@ -44,8 +44,8 @@ header .carousel-text {
 .border-bottom-dashed {
   border-bottom: 1px dashed;
 }
-.scroll-margin-top-20 {
-  scroll-margin-top: 20ex;
+.scroll-margin-top-30 {
+  scroll-margin-top: 30ex;
 }
 .scroll-margin-top-15 {
   scroll-margin-top: 15ex;
@@ -64,4 +64,8 @@ header .carousel-text {
 
 .border-none {
   border: none !important;
+}
+
+#tickets, #register,#login {
+  margin-top: 30rem !important;
 }
