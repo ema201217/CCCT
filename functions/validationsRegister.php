@@ -1,7 +1,24 @@
 <?php 
-include 'stateInitialErrorsForm.php';
+$arrErrors = [
+  'firstName' => '',
+  'lastName' => '',
+  'email' => '',
+  'dni' => '',
+  'phone' => '',
+  'address' => '',
+  'username' => '',
+  'pass' => '',
+  'terms' => ''
+];
 
 $existErrors = true;
+
+/* Funcion que valida si se realizo un envió de formulario y luego evalúa la condición que recibe como parámetro para definir cual string sera colocado (en este caso la implementación es para un nombre de clase) */
+/* La condición del parámetro debe ser para asignar si da true una clase de invalidación, ejemplo una clase text-danger o is-invalid, como en este caso! */
+$addClassValidationInputInvalid = fn( bool $conditionFromInvalid): string => 
+!empty($_POST)
+? ($conditionFromInvalid ? 'is-invalid' : 'is-valid')
+: '';
 
 if(!empty($_POST)) {
     include 'varsRequestRegister.php';
@@ -150,9 +167,9 @@ if(!empty($_POST)) {
         $existErrors = true;
         break;
       default:
-      $arrErrors['terms'] = '';
-      $existErrors = false;
-      break;
+        $arrErrors['terms'] = '';
+        $existErrors = false;
+        break;
     }
   }
 ?>

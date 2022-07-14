@@ -1,5 +1,13 @@
 <?php include './partials/header.html';
+
+
 include '../functions/validationsRegister.php';
+
+if(!$existErrors) {
+  include '../functions/CRUD_USERS.php';
+  $create_user();
+}
+
 
 ?>
   <main class="my-4 d-flex flex-column align-items-center" id="register">
@@ -8,20 +16,11 @@ include '../functions/validationsRegister.php';
       <p class="text-muted my-0 fs-4">Registro</p>
       <form action="
       <?php 
-        
+       $existErrors
       ?>
       " method="post" class="row g-3 needs-validation" novalidate>
         <div class="container d-flex justify-content-center text-start">
           <div class="row justify-content-center align-items-center col-8">
-
-          <?php 
-            $addClassValidationInputInvalid = fn( bool $conditionFromInvalid): string => 
-            !empty($_POST)
-            ? ($conditionFromInvalid ? 'is-invalid' : 'is-valid')
-            : '';
-
-
-          ?>
 
           <!-- INPUT FIRST NAME -->
           <!-- |||||||||||||||| -->
@@ -139,7 +138,7 @@ include '../functions/validationsRegister.php';
               <?php echo isset($_POST['terms']) && $terms == 'off' ? 'checked' : ''; ?>>
 
               <label for="terms" class="form-check-label">Aceptar términos y condiciones</label>
-              <p class="text-danger"><?php echo $arrErrors['terms']; ?></p>
+              
             </div>
           
           <!-- BUTTON SUBMIT -->

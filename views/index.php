@@ -86,7 +86,7 @@
   </header>
 
   <main class="my-5">
-    <section id="oradores" class="scroll-margin-top-15">
+    <section id="oradores" class="scroll-margin-top-20">
       <p class="text-muted text-center my-0">CONOCE A LOS</p>
       <h2 class="fw-bold text-center mb-4">ORADORES</h2>
       <div class="container d-flex flex-wrap justify-content-around gap-3">

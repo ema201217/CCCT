@@ -1,39 +1,25 @@
 <?php 
+include 'connection.php';
+include 'varsRequestRegister.php';
 
-$create_user = fn() => (
-    include 'connection.php';
-    include 'varsRequestRegister';
-    $queryCreate = "INSERT INTO users (id, lastName, firstName, email, phone, dni, username,address,password)
+/* Function para crear un usuario */
+$queryCreate = "INSERT INTO users (id, lastName, firstName, email, phone, dni, username,address,password) 
 VALUES (NULL,'$lastName','$firstName','$email','$phone','$dni','$username','$address','$pass')";
+$create_user = fn() => mysqli_query($connection,$queryCreate);
 
-    mysqli_query($connection,$queryCreate);
-)
+/* Función para actualizar un usuario */
+$queryUpdate = fn($id) => "UPDATE users SET lastName='$lastName', firstName='$firstName', email='$email', phone='$phone', dni='$dni', username='$username',address='$address',password='$pass' WHERE id=$id";
+$update_user = fn($id) => mysqli_query($connection,$queryUpdate($id)); 
 
-$update_user = fn($id) => (
-    include 'connection.php';
-    include 'varsRequestRegister';
-    $queryUpdate = "UPDATE users SET lastName='$lastName', firstName='$firstName', email='$email', phone='$phone', dni='$dni', username='$username',address='$address',password='$pass' WHERE id=$id";
-    mysqli_query($connection,$queryUpdate); 
-)
+/* Función para eliminar un usuario */
+$queryDelete = fn($id) => "DELETE FROM users WHERE id=$id";
+$delete_user = fn($id) => mysqli_query($connection,$queryDelete($id));
 
-$remove_user = fn($id) => (
-    include 'connection.php';
-    include 'varsRequestRegister';
-    $queryDelete = "DELETE FROM users WHERE id=$id";
-    mysqli_query($connection,$queryDelete);
-)
+/* Función para traer un usuario */
+$querySelectOne = fn($id) => "SELECT * FROM users WHERE id=$id";
+$get_user_by_id = fn($id) => mysqli_query($connection,$querySelectOne($id));
 
-$get_user_by_id = fn($id) => (
-    include 'connection.php';
-    include 'varsRequestRegister';
-    $queryDelete = "SELECT * FROM users WHERE id=$id";
-    mysqli_query($connection,$queryDelete);
-)
-
-$get_user_all = fn() => (
-    include 'connection.php';
-    include 'varsRequestRegister';
-    $queryDelete = "SELECT * FROM users WHERE id=$id";
-    mysqli_query($connection,$queryDelete);
-)
+/* Función para traer todos los usuario */
+$querySelectAll = "SELECT * FROM users";
+$get_user_all = fn() => mysqli_query($connection,$querySelectAll);
 ?>

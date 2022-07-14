@@ -1,5 +1,7 @@
 
-<?php include './partials/header.html';?>
+<?php 
+  include './partials/header.html';
+?>
 
   <main class="my-4 d-flex flex-column align-items-center" id="login">
     <section class="text-center my-5">
