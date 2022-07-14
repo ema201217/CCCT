@@ -11,7 +11,7 @@ $arrErrors = [
   'terms' => ''
 ];
 
-$existErrors = true;
+$existErrors = false;
 
 /* Funcion que valida si se realizo un envió de formulario y luego evalúa la condición que recibe como parámetro para definir cual string sera colocado (en este caso la implementación es para un nombre de clase) */
 /* La condición del parámetro debe ser para asignar si da true una clase de invalidación, ejemplo una clase text-danger o is-invalid, como en este caso! */
@@ -45,32 +45,31 @@ if(!empty($_POST)) {
   /* VALIDATION LastName */
     switch (true) {
       case empty($lastName):
-      case strlen($lastName) > 15:
-      case is_numeric($lastName):
-        $existErrors = true;
-      case empty($lastName):
         $arrErrors['lastName'] = 'El apellido es requerido';
+        $existErrors = true;
         break;
       case strlen($lastName) > 15:
         $arrErrors['lastName'] = 'El apellido es muy largo';
+        $existErrors = true;
         break;
       case is_numeric($lastName):
         $arrErrors['lastName'] = 'El apellido es invalido';
+        $existErrors = true;
         break;
       default:
         $arrErrors['lastName'] = '';
+        $existErrors = false;
         break;
     }
   /* VALIDATION Email */
     switch (true) {
       case empty($email):
-      case !filter_var($email,FILTER_VALIDATE_EMAIL):
-        $existErrors = true;
-      case empty($email):
         $arrErrors['email'] = 'El email es requerido';
+        $existErrors = true;
         break;
       case !filter_var($email,FILTER_VALIDATE_EMAIL):
         $arrErrors['email'] = 'El email invalido';
+        $existErrors = true;
         break;
       default:
         $arrErrors['email'] = '';

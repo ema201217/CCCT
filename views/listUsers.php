@@ -40,6 +40,14 @@
       <td><?php echo $table['email']; ?></td>
       <td><?php echo $table['address']; ?></td>
       <td><?php echo $table['role']; ?></td>
+      <td class="row">
+        <form action="" class="col col-6 p-0">
+          <button class="btn btn-danger btn-sm" name="delete" type="submit"><i class="fa-solid fa-user-xmark"></i></button>
+        </form>    
+        <form action="" class="col col-6 p-0">
+          <button class="btn btn-info btn-sm" name="edit" type="submit"><i class="fa-solid fa-user-pen"></i></button>
+        </form>    
+    </td>
     </tr>
    
   <?php } ?>

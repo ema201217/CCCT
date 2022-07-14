@@ -1,24 +1,19 @@
-<?php include './partials/header.html';
-
-
+<?php 
+include './partials/header.html';
 include '../functions/validationsRegister.php';
+include '../functions/CRUD_USERS.php';
 
-if(!$existErrors) {
-  include '../functions/CRUD_USERS.php';
+
+if(!isset($_POST['btn-register']) && !$existErrors) {
   $create_user();
 }
-
 
 ?>
   <main class="my-4 d-flex flex-column align-items-center" id="register">
     <section class="text-center my-5">
       <h2 class="fw-bold mb-1">FORMULARIO</h2>
       <p class="text-muted my-0 fs-4">Registro</p>
-      <form action="
-      <?php 
-       $existErrors
-      ?>
-      " method="post" class="row g-3 needs-validation" novalidate>
+      <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" class="row g-3 needs-validation" novalidate>
         <div class="container d-flex justify-content-center text-start">
           <div class="row justify-content-center align-items-center col-8">
 
