@@ -43,12 +43,11 @@
                 <td class="row justify-content-center">
 
                     <a class="btn btn-danger text-center"
-                        href="../delete.php?id=<?php echo $table['id']; ?>"><i
+                        href="delete.php?id=<?php echo $table['id']; ?>"><i
                             class="fa-solid fa-user-xmark"></i></a>
 
                     <a class="btn btn-info text-center" href="update.php?id=<?php echo $table['id'];?>"><i
                             class="fa-solid fa-user-pen"></i></a>
-
                 </td>
             </tr>
 
