@@ -1,154 +1,151 @@
-<?php 
-include './partials/header.html';
-include '../functions/validationsRegister.php';
-include '../functions/CRUD_USERS.php';
+<?php include './partials/header.html'; ?>
 
-
-if(!isset($_POST['btn-register']) && !$existErrors) {
-  $create_user();
-}
-
-?>
-  <main class="my-4 d-flex flex-column align-items-center" id="register">
-    <section class="text-center my-5">
-      <h2 class="fw-bold mb-1">FORMULARIO</h2>
-      <p class="text-muted my-0 fs-4">Registro</p>
-      <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" class="row g-3 needs-validation" novalidate>
-        <div class="container d-flex justify-content-center text-start">
-          <div class="row justify-content-center align-items-center col-8">
-
+<main class="my-4 d-flex flex-column align-items-center" id="register">
+  <section class="text-center my-5">
+    <h2 class="fw-bold mb-1">FORMULARIO</h2>
+    <p class="text-muted my-0 fs-4">Registro</p>
+    <form id="form-register" action="../functions/validation_create.php" method="post" class="row g-3">
+      <div class="container d-flex justify-content-center text-start">
+        <div class="row justify-content-center align-items-center col-8">
           <!-- INPUT FIRST NAME -->
           <!-- |||||||||||||||| -->
-            <div class="my-2 col-12 col-lg-6">
-              <input type="text" name="firstName" id="validationCustom01" placeholder="Nombre" value="<?php if(isset($firstName)) echo $firstName ?>" class="form-control 
-            <?php 
-              echo $addClassValidationInputInvalid($arrErrors['firstName'] != ''); 
-            ?>">
-              <span class="text-danger">
-                <?php 
-                echo $arrErrors['firstName']; 
-                ?>
-              </span>
+          <div class="my-2 col-12 col-lg-6">
+            <div class="form-floating">
+              <input type="text" name="firstName" placeholder="Nombre" value="" class="form-control" required>
+              <label for="">Nombre</label>
             </div>
+            <span id="errorFirstName"></span>
+          </div>
 
 
           <!-- INPUT LAST NAME -->
           <!-- ||||||||||||||| -->
-            <div class="my-2 col-12 col-lg-6">
-              <input type="text" name="lastName" placeholder="Apellido" 
-              value="<?php if(isset($lastName)) echo $lastName ?>" 
-              class="form-control <?php 
-               echo $addClassValidationInputInvalid($arrErrors['lastName'] != '');
-              ?>">
-              <span class="text-danger"><?php echo $arrErrors['lastName']; ?></span>
+          <div class="my-2 col-12 col-lg-6">
+            <div class="form-floating">
+              <input type="text" name="lastName" placeholder="Apellido" value="" class="form-control" required>
+              <label for="">Apellido</label>
             </div>
+            <span id="errorLastName"></span>
+          </div>
 
           <!-- INPUT EMAIL -->
           <!-- ||||||||||| -->
-            <div class="my-2 col-12 col-lg-6">
-              <input type="text" name="email" placeholder="Email" 
-              value="<?php 
-              if(isset($email)) echo $email ?>" 
-              class="form-control <?php 
-              echo $addClassValidationInputInvalid($arrErrors['email'] != ''); 
-              ?>">
-              <span class="text-danger"><?php echo $arrErrors['email']; ?></span>
+          <div class="my-2 col-12 col-lg-6">
+            <div class="form-floating">
+              <input type="text" name="email" placeholder="Email" value="" class="form-control" required>
+              <label for="">Email</label>
             </div>
+            <span id="errorEmail"></span>
+          </div>
 
-          <!-- INPUT DNI --> 
+          <!-- INPUT DNI -->
           <!-- ||||||||| -->
-            <div class="my-2 col-12 col-lg-6 text-start">
-              <input type="number" name="dni" id="dni" placeholder="DNI" 
-              value="<?php 
-              if(isset($dni)) echo $dni; 
-              ?>" 
-              class="form-control <?php 
-               echo $addClassValidationInputInvalid($arrErrors['dni'] != ''); 
-              ?>">
-              <span class="text-danger"><?php echo $arrErrors['dni']; ?></span>
+          <div class="my-2 col-12 col-lg-6 text-start">
+            <div class="form-floating">
+              <input type="text" name="dni" id="dni" placeholder="DNI" value="" class="form-control" required>
+              <label for="">DNI</label>
             </div>
+            <span id="errorDNI"></span>
+          </div>
 
           <!-- INPUT PHONE -->
           <!-- ||||||||||| -->
-            <div class="my-2 col-12 col-lg-6 text-start">
-              <input type="number" name="phone" id="phone" placeholder="Teléfono" value="<?php if(isset($phone)) echo $phone ?>" class="form-control 
-              <?php 
-              echo $addClassValidationInputInvalid($arrErrors['phone'] != '');   
-              ?>">
-              <span class="text-danger"><?php echo $arrErrors['phone']; ?></span>
+          <div class="my-2 col-12 col-lg-6 text-start">
+            <div class="form-floating">
+              <input type="text" name="phone" id="phone" placeholder="Teléfono" value="" class="form-control" required>
+              <label for="">Teléfono</label>
             </div>
+            <span id="errorPhone"></span>
+          </div>
 
           <!-- INPUT ADDRESS -->
           <!-- ||||||||||||| -->
-            <div class="my-2 col-12 col-lg-6 text-start">
-              <input type="text" name="address" id="address" placeholder="Dirección" class="form-control 
-              <?php 
-              echo $addClassValidationInputInvalid($arrErrors['address'] != '');   
-              ?>" 
-              value="<?php 
-              if(isset($address)) echo "$address" 
-              ?>">
-              <span class="text-danger">
-                <?php echo $arrErrors['address']; 
-              ?></span>
+          <div class="my-2 col-12 col-lg-6 text-start">
+            <div class="form-floating">
+              <input type="text" name="address" id="address" placeholder="Dirección" class="form-control" value=""
+                required>
+              <label for="">Dirección</label>
             </div>
+            <span id="errorAddress"></span>
+          </div>
 
           <!-- INPUT USERNAME -->
           <!-- |||||||||||||| -->
-            <div class="my-2 col-12 col-lg-6 text-start">
-              <input type="text" name="username" id="username" placeholder="Username" 
-              value="<?php 
-              if(isset($username)) echo $username 
-              ?>" 
-              class="form-control <?php 
-              echo $addClassValidationInputInvalid($arrErrors['username'] != '');   
-              ?>">
-              <span class="text-danger"><?php echo $arrErrors['username']; ?></span>
+          <div class="my-2 col-12 col-lg-6 text-start">
+            <div class="form-floating">
+              <input type="text" name="username" id="username" placeholder="Username" value="" class="form-control"
+                required>
+              <label for="">Username</label>
             </div>
+            <span id="errorUsername"></span>
+          </div>
 
           <!-- INPUT PASSWORD -->
           <!-- |||||||||||||| -->
-            <div class="my-2 col-12 col-lg-6 text-start">
-              <input type="text" name="pass" id="pass" placeholder="Password" 
-              value="<?php 
-              if(isset($pass)) echo $pass 
-              ?>" 
-              class="form-control <?php 
-              echo $addClassValidationInputInvalid($arrErrors['pass'] != '');   
-              ?>">
-              <span class="text-danger"><?php echo $arrErrors['pass']; ?></span>
+          <div class="my-2 col-12 col-lg-6 text-start">
+            <div class="form-floating d-flex">
+              <input type="password" class="form-control" id="password" name="pass" placeholder="Contraseña" required>
+              <div class="input-group-prepend icon-container">
+                <span class="input-group-text h-100 bg-white border-0"><i class="fa-solid fa-eye text-dark"
+                    onclick='seePass(event)'></i></span>
+              </div>
+              <label for="">Contraseña</label>
             </div>
+          </div>
+          <span id="errorPassword"></span>
+
+          <script>
+          /* Funcion para visualizar el password */
+          const seePass = ({
+            target
+          }) => {
+            let $inputPass = document.querySelector('#password');
+            $inputPass.type = $inputPass.type === "password" ? "text" : "password";
+            if ($inputPass.type === "password") {
+              target.classList.add('fa-eye', 'text-dark');
+              target.classList.remove('fa-eye-slash', 'text-danger');
+            } else {
+              target.classList.remove('fa-eye', 'text-dark');
+              target.classList.add('fa-eye-slash', 'text-danger');
+            }
+          }
+          </script>
 
           <!-- INPUT TERMS -->
           <!-- ||||||||||| -->
-            <div class="my-2 col-12 col-lg-12 text-start text-center">                                  <!-- Si se setea el checkbox de términos y condiciones y el valor devuelto es 'on' entonces quedara checkeado -->
-              <input type="checkbox" id="terms" name="terms" 
-              class="form-check-input <?php 
-              echo $addClassValidationInputInvalid($arrErrors['terms'] != '');  
-              ?>" 
-              value="on" 
-              <?php echo isset($_POST['terms']) && $terms == 'on' ? 'checked' : ''; ?>>
-              
-              <input type="checkbox" id="terms" name="terms" value="off" hidden 
-              <?php echo isset($_POST['terms']) && $terms == 'off' ? 'checked' : ''; ?>>
+          <div class="my-4 col-12 col-lg-6 text-center">
+            <input type="checkbox" id="terms" name="terms" class="form-check-input" value="on">
+            <label for="terms" class="form-check-label">Aceptar términos y condiciones</label>
+            <span id="errorTerms"></span>
+          </div>
 
-              <label for="terms" class="form-check-label">Aceptar términos y condiciones</label>
-              
-            </div>
-          
+          <!-- reCaptcha -->
+          <!-- <script src="https://www.google.com/recaptcha/api.js" async></script> -->
+          <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async>
+          </script>
+
+          <div class="my-4 col-12 col-lg-6">
+            <div class="g-recaptcha" id="ReCaptcha"></div>
+          </div>
+
+          <!-- reCaptcha End-->
+
+
           <!-- BUTTON SUBMIT -->
           <!-- ||||||||||||| -->
-            <div class="my-2 d-flex gap-4">
-              <a href="login.php#login" class="btn btn-primary w-100">Ya tengo cuenta</a>
-              <button type="submit" id="btnResumen" name="btn-register" class="btn btn-success w-100">Registrar</a>
-            </div>
-            
+          <div class="my-2 d-flex gap-4">
+            <a href="login.php#login" class="btn btn-primary w-100">Ya tengo cuenta</a>
+            <button type="submit" id="btnResumen" name="btn-register" class="btn btn-success w-100">Registrarse</a>
           </div>
+
         </div>
-        </div>
-      </form>
-      
-    </section>
-  </main>
+      </div>
+      </div>
+    </form>
+
+  </section>
+</main>
+
+
 
 <?php include './partials/footer.html'; ?>

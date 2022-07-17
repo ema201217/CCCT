@@ -1,3 +1,6 @@
+html *{
+  scroll-behavior:initial !important;
+}
 
 header nav {
   z-index: 2000;
@@ -72,3 +75,15 @@ header .carousel-text {
 /* #tickets, #register,#login {
   margin-top: 30rem !important;
 } */
+
+body.update {
+  overflow: hidden;
+}
+
+.icon-container {
+  position: absolute;
+  right: 10px;
+  padding: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
