@@ -1,3 +1,6 @@
+<?php 
+include '../functions/routes-protected.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,10 +8,16 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" defer>
+  </script>
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/script.js" defer></script>
 
@@ -19,43 +28,7 @@
 
   <header class="position-relative">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient position-fixed top-0 w-100" style="--bs-bg-opacity: .95;">
-      <div class="container-fluid d-flex justify-content-between">
-        <div>
-          <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/codoacodo.png" alt="logo" class="logo">
-          <a class="navbar-brand" href="#">Conf Bs As</a>
-        </div>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav flex-wrap">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php#">La conferencia</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.php#oradores">Los oradores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.php#lugarFecha">El lugar y la fecha</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.php#formOrador">Conviértete en orador</a>
-            </li>
-            <li class="nav-item">
-              <a href="tickets.php#tickets" class="nav-link text-success fw-bold">Comprar tickets</a>
-            </li>
-            <li class="nav-item">
-              <a href="register.php#register" class="nav-link text-warning fw-bold">Register</a>
-            </li>
-            <li class="nav-item">
-              <a href="login.php#login" class="nav-link text-primary fw-bold">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <?php include './partials/nav-session.php'; ?>
 
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -136,7 +109,8 @@
   <section id="lugarFecha" class="scroll-margin-top-20 my-5">
     <div class="container text-white">
       <div class="row">
-        <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/honolulu.jpg" alt="" class="col-12 col-lg-6 p-0 border">
+        <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/honolulu.jpg" alt=""
+          class="col-12 col-lg-6 p-0 border">
         <div class="bg-dark p-2 col-12 col-lg-6 border">
           <h2>Bs As - Octubre</h2>
           <p>Buenos Aires es la provincia y localidad más grande del estado de Argentina, en los Estados
@@ -177,6 +151,6 @@
     </form>
   </section>
 
-<?php 
+  <?php 
   include './partials/footer.html';
 ?>

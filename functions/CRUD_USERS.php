@@ -1,25 +1,76 @@
-<?php 
+<?php
 include 'connection.php';
 
 /* Function para crear un usuario */
-$create_user = fn($firstName,$lastName, $email,$dni,$phone,$address,$username,$pass) => 
-mysqli_query($connection,"INSERT INTO users (id, lastName, firstName, email, phone, dni, username,address,password) 
-VALUES (NULL,'$lastName','$firstName','$email','$phone','$dni','$username','$address','$pass')");
-
+function create_user(
+    $firstName,
+    $lastName,
+    $email,
+    $dni,
+    $phone,
+    $address,
+    $username,
+    $pass
+) {
+    $pass = password_hash($pass,PASSWORD_DEFAULT);
+    return mysqli_query(
+      $GLOBALS['connection'],
+        "INSERT INTO users (id, lastName, firstName, email, phone, dni, username,address,password) 
+VALUES (NULL,'$lastName','$firstName','$email','$phone','$dni','$username','$address','$pass')"
+    );
+};
 
 /* Función para actualizar un usuario */
-$update_user = fn($id,$firstName,$lastName,$dni,$phone,$address,$username,$pass) => 
-mysqli_query($connection, "UPDATE users SET lastName='$lastName', firstName='$firstName', phone='$phone', dni='$dni', username='$username',address='$address',password='$pass' WHERE id=$id");
-
+function update_user(
+    $id,
+    $firstName,
+    $lastName,
+    $dni,
+    $phone,
+    $address,
+    $username,
+    $pass
+) {
+    return mysqli_query(
+      $GLOBALS['connection'],
+        "UPDATE `users` SET `lastName`='$lastName', `firstName`='$firstName', `phone`='$phone', `dni`='$dni', `username`='$username',`address`='$address',`password`='$pass' WHERE `id`=$id"
+    );
+};
 /* Funcion para corroborar que el email a registrar no exista */
-$exist_email_db = fn($email) => mysqli_query($connection,"SELECT email FROM users WHERE email=$email");
+function exist_email_db($email)
+{
+    return mysqli_query(
+      $GLOBALS['connection'],
+        "SELECT email FROM users WHERE email='$email';"
+    );
+};
+
+/* Buscar un usuario por su email */
+function find_by_email($email)
+{
+    return mysqli_query(
+      $GLOBALS['connection'],
+        "SELECT * FROM users WHERE email='$email'"
+    );
+};
 
 /* Función para eliminar un usuario */
-$delete_user = fn($id) => mysqli_query($connection,"DELETE FROM users WHERE id=$id");
+function delete_user($id)
+{
+    return mysqli_query($GLOBALS['connection'], "DELETE FROM users WHERE id=$id");
+};
 
 /* Función para traer un usuario */
-$get_user_by_id = fn($id) => mysqli_fetch_array(mysqli_query($connection,"SELECT * FROM users WHERE id=$id"));
+function get_user_by_id($id)
+{
+    return mysqli_fetch_array(
+        mysqli_query($GLOBALS['connection'], "SELECT * FROM users WHERE id=$id")
+    );
+};
 
 /* Función para traer todos los usuario */
-$get_user_all = fn() => mysqli_query($connection,"SELECT * FROM users");
+function get_user_all()
+{
+  return mysqli_query($GLOBALS['connection'], 'SELECT * FROM users');
+};
 ?>

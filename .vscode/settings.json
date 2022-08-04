@@ -4,5 +4,10 @@
         "maxlength",
         "sendemail",
         "Swal"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1B3318",
+        "titleBar.activeBackground": "#264721",
+        "titleBar.activeForeground": "#F7FBF6"
+    }
 }

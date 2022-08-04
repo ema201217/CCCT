@@ -35,7 +35,7 @@ CREATE TABLE `users` (
   `role` int(11) NOT NULL DEFAULT '2',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_IDX` (`email`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (26,'test 1','test 1','test@test@test.com','1133445566','37856443','test2022','calle test','1234567890',2),(27,'test 1','test 2','test2022','1133445566','37856443','test2022','calle test','1234567890',2);
+INSERT INTO `users` VALUES (26,'test 1','test 1','test@test@test.com','1133445566','56','test2022','calle test','1234567890',2),(52,'arroyo','asdadas','test@test.com','1156412335','36940637','ema201217','letonia 279','123123123',2),(53,'arroyo','asdadas','admin@admin.com','1156412335','36940637','emanuelarroyo','garcia lorca 1234','11322323113',2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-14 14:30:22
+-- Dump completed on 2022-07-17 21:02:17

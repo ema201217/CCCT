@@ -49,7 +49,7 @@ const rules = {
   },
   pass: {
     required: true,
-    minlength: 6,
+    minlength: 8,
     maxlength: 20,
   },
   terms: {

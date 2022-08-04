@@ -1,4 +1,4 @@
-<?php include './partials/header.html'; ?>
+<?php include './partials/header.php'; ?>
 
 <main class="my-4 d-flex flex-column align-items-center" id="register">
   <section class="text-center my-5">
@@ -148,4 +148,5 @@
 
 
 
-<?php include './partials/footer.html'; ?>
+<?php include './partials/footer.php'; ?>
+<script src="../js/validate-register.config.js"></script>
