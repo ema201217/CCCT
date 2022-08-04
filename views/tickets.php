@@ -1,6 +1,9 @@
 <?php
 include '../functions/routes-protected.php';
 include './partials/header.php';
+if($_SESSION["user"]["role"] != '2'){
+  header("Location: index.php");
+}
 ?>
 
 <main class="my-4 d-flex flex-column align-items-center" id="tickets">

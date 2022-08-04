@@ -1,8 +1,12 @@
 <?php
 include '../functions/CRUD_USERS.php';
-$user = get_user_by_id($_GET['id']);
-
 include './partials/header.php';
+
+if($_SESSION["user"]["role"] != '1'){
+  header("Location: index.php");
+}
+
+$user = get_user_by_id($_GET['id']);
 ?>
 <main class="my-4 d-flex flex-column align-items-center" id="register">
   <section class="text-center my-5">

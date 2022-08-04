@@ -1,9 +1,13 @@
 <?php
 
 include '../functions/CRUD_USERS.php';
-$data = get_user_all();
 include './partials/header.php';
-include '../functions/routes-protected.php';
+
+if(empty($_SESSION["user"]) && $_SESSION["user"]->role == '2'){
+  header("Location: index.php");
+}
+
+$data = get_user_all();
 ?>
 
 <main class="container">

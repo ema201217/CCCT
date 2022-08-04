@@ -1,10 +1,27 @@
 <?php
-include './partials/header.php'; ?>
+include './partials/header.php'; 
+if(!empty($_SESSION["user"])){
+  header("Location: index.php");
+}
+?>
 
 <main class="d-flex flex-column align-items-center scroll-margin-top-40 login" id="login">
   <section class="text-center">
     <h2 class="fw-bold mb-1">FORMULARIO</h2>
     <p class="text-muted my-0 fs-4">Login</p>
+    <div class="row justify-content-center gap-2">
+        
+    <div class="col-12 col-md-7 card">
+        <h3>User Admin</h3>
+    <p class="text-muted">email: admin@admin.com</p>
+    <p class="text-muted">password: 1234567890</p>
+    </div>
+    <div class="col-12 col-md-7 card">
+        <h3>User regular</h3>
+    <p class="text-muted">email: test@test.com</p>
+    <p class="text-muted">password: 1234567890</p>
+    </div>
+    </div>
     <form action="../functions/login-verify.php" method="post">
       <div class="container d-flex justify-content-center my-4">
         <div class="row justify-con tent-center col-12 col-md-6 col-lg-6">

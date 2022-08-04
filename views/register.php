@@ -1,4 +1,8 @@
-<?php include './partials/header.php'; ?>
+<?php include './partials/header.php'; 
+if(!empty($_SESSION["user"])){
+  header("Location: index.php");
+}
+?>
 
 <main class="d-flex flex-column align-items-center scroll-margin-top-40 register" id="register">
   <section class="text-center mt-7">
