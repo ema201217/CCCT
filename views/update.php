@@ -104,35 +104,12 @@ include './partials/header.php';
           <!-- |||||||||||||| -->
           <div class="my-2 col-12 col-lg-6 text-start">
             <div class="form-floating d-flex">
-              <input type="password" class="form-control" id="password" name="pass" value="<?php echo $user[
-                  'password'
-              ]; ?>" placeholder="Contraseña" required>
-              <div class="input-group-prepend icon-container">
-                <span class="input-group-text h-100 bg-white border-0"><i class="fa-solid fa-eye text-dark"
-                    onclick='seePass(event)'></i></span>
-              </div>
+              <input type="password" class="form-control" id="password" name="pass" value="passwordfalso" placeholder="Contraseña" disabled>
+              
               <label for="">Contraseña</label>
             </div>
           </div>
           <span id="errorPassword2"></span>
-
-
-          <script>
-          /* Funcion para visualizar el password */
-          const seePass = ({
-            target
-          }) => {
-            let $inputPass = document.querySelector('#password');
-            $inputPass.type = $inputPass.type === "password" ? "text" : "password";
-            if ($inputPass.type === "password") {
-              target.classList.add('fa-eye', 'text-dark');
-              target.classList.remove('fa-eye-slash', 'text-danger');
-            } else {
-              target.classList.remove('fa-eye', 'text-dark');
-              target.classList.add('fa-eye-slash', 'text-danger');
-            }
-          }
-          </script>
 
           <!-- BUTTON SUBMIT -->
           <!-- ||||||||||||| -->

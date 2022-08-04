@@ -1,5 +1,5 @@
 <footer>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-darkblue">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid d-flex justify-content-between">
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2"

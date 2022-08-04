@@ -1,3 +1,7 @@
+<?php 
+
+     include '../functions/cookie-session.php'; 
+?>
 <!DOCTYPE html>
 <html lang="es">
 

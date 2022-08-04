@@ -1,5 +1,5 @@
-<?php 
-include '../functions/routes-protected.php';
+<?php
+include '../functions/cookie-session.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,17 +28,17 @@ include '../functions/routes-protected.php';
 
   <header class="position-relative">
 
-  <?php include './partials/nav-session.php'; ?>
+    <?php include './partials/nav-session.php'; ?>
 
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item">
           <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/ba1.jpg" class="d-block w-100 bg-dark" alt="...">
         </div>
         <div class="carousel-item">
           <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/ba2.jpg" class="d-block w-100 bg-dark" alt="...">
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item active">
           <img src="https://s3.sa-east-1.amazonaws.com/ong.somos.mas/ba3.jpg" class="d-block w-100 bg-dark" alt="...">
         </div>
 
@@ -151,6 +151,5 @@ include '../functions/routes-protected.php';
     </form>
   </section>
 
-  <?php 
-  include './partials/footer.html';
+  <?php include './partials/footer.php';
 ?>

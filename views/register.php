@@ -1,7 +1,7 @@
 <?php include './partials/header.php'; ?>
 
-<main class="my-4 d-flex flex-column align-items-center" id="register">
-  <section class="text-center my-5">
+<main class="d-flex flex-column align-items-center scroll-margin-top-40 register" id="register">
+  <section class="text-center mt-7">
     <h2 class="fw-bold mb-1">FORMULARIO</h2>
     <p class="text-muted my-0 fs-4">Registro</p>
     <form id="form-register" action="../functions/validation_create.php" method="post" class="row g-3">
@@ -135,14 +135,12 @@
           <!-- ||||||||||||| -->
           <div class="my-2 d-flex gap-4">
             <a href="login.php#login" class="btn btn-primary w-100">Ya tengo cuenta</a>
-            <button type="submit" id="btnResumen" name="btn-register" class="btn btn-success w-100">Registrarse</a>
+            <button type="submit" id="btn-register" name="btn-register" class="btn btn-success w-100">Registrarse</a>
           </div>
-
         </div>
       </div>
       </div>
     </form>
-
   </section>
 </main>
 

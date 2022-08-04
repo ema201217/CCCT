@@ -1,7 +1,3 @@
-html *{
-  scroll-behavior:initial !important;
-}
-
 header nav {
   z-index: 2000;
 }
@@ -14,6 +10,14 @@ header img.logo {
 footer nav {
   padding-left: 7rem;
   padding-right: 7rem;
+}
+
+.register,.login  {
+  margin: 9rem auto !important;
+}
+
+.table-users {
+  margin-top: 10rem !important;
 }
 
 @media (max-width: 990px) {
@@ -46,6 +50,9 @@ header .carousel-text {
 
 .border-bottom-dashed {
   border-bottom: 1px dashed;
+}
+.scroll-margin-top-40 {
+  scroll-margin-top: 40ex;
 }
 .scroll-margin-top-30 {
   scroll-margin-top: 30ex;
@@ -86,4 +93,11 @@ body.update {
   padding: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+html{
+  scroll-behavior:smooth !important;
+}
+html::-webkit-scrollbar{
+  display: none;
 }

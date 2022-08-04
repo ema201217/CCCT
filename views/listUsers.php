@@ -1,14 +1,14 @@
 <?php
 
-include '../functions/routes-protected.php';
 include '../functions/CRUD_USERS.php';
 $data = get_user_all();
 include './partials/header.php';
+include '../functions/routes-protected.php';
 ?>
 
-<main>
+<main class="container">
 
-  <table class="table">
+  <table class="table table-users">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Item</th>

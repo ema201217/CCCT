@@ -68,8 +68,8 @@ include './partials/header.php';
             </output>
           </div>
           <div class="d-flex gap-4 my-4">
-            <button type="reset" id="btnReset" class="btn btn-success w-100 bg-success-light">Borrar</a>
-              <button type="button" id="btnResumen" class="btn btn-success w-100 bg-success-light">Resumen</a>
+            <button type="reset" id="btnReset" class="btn btn-danger w-100">Borrar</a>
+              <button type="button" id="btnResumen" class="btn btn-success w-100">Resumen</a>
           </div>
         </div>
       </div>
